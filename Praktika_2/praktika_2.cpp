@@ -23,7 +23,7 @@ void copyArray(void* source, void* destination, size_t cnt)
 		*(pdres) = *(psres);
 	}
 
-	if ((((cnt * sizeof(int)) % 8) >= 1) && (((cnt * sizeof(int)) % 8) < 3))
+	if ((((cnt * sizeof(int)) % 8) >= 1) && (((cnt * sizeof(int)) % 8) <= 3))
 	{
 		char* ps8res = (char*)((uintptr_t)source + sizeof(uint64_t) );
 		char* pd8res = (char*)((uintptr_t)destination + sizeof(uint64_t) );
